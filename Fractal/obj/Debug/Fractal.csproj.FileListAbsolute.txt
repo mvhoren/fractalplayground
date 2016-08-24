@@ -1,0 +1,6 @@
+C:\Development\Fractal\Fractal\bin\Debug\Fractal.exe.config
+C:\Development\Fractal\Fractal\bin\Debug\Fractal.exe
+C:\Development\Fractal\Fractal\bin\Debug\Fractal.pdb
+C:\Development\Fractal\Fractal\obj\Debug\Fractal.csprojResolveAssemblyReference.cache
+C:\Development\Fractal\Fractal\obj\Debug\Fractal.exe
+C:\Development\Fractal\Fractal\obj\Debug\Fractal.pdb

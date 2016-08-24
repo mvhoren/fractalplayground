@@ -1,0 +1,8 @@
+C:\Development\Fractal\FractalTests\obj\Release\FractalTests.csprojResolveAssemblyReference.cache
+C:\Development\Fractal\FractalTests\bin\Release\FractalTests.dll
+C:\Development\Fractal\FractalTests\bin\Release\FractalTests.pdb
+C:\Development\Fractal\FractalTests\bin\Release\FractalLibrary.dll
+C:\Development\Fractal\FractalTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Development\Fractal\FractalTests\bin\Release\FractalLibrary.pdb
+C:\Development\Fractal\FractalTests\obj\Release\FractalTests.dll
+C:\Development\Fractal\FractalTests\obj\Release\FractalTests.pdb
