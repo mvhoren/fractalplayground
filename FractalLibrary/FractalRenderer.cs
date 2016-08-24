@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 
 namespace Fractal
 {
@@ -15,7 +13,7 @@ namespace Fractal
 		Range horizontal { get; }
 		Range vertical { get; }
 
-		private readonly int iterationCutoff = 150;
+		private readonly int iterationCutoff = 1000;
 		private Color[] palette;
 
 		public FractalRenderer(ComplexPlane complexPlane, Size size)

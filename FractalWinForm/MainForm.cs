@@ -39,6 +39,9 @@ namespace FractalWinForm
 
 		private void Viewport_MouseUp(object sender, MouseEventArgs e)
 		{
+			if (!isZooming)
+				return;
+
 			panel1.Visible = false;
 			isZooming = false;
 
