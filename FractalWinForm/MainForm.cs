@@ -7,7 +7,6 @@ namespace FractalWinForm
 	public partial class FormMain : Form
 	{
 		private double phi = 1.61803398874989484820458683436;
-		private double movingConstant = 0.001;
 		private Range realRange = new Range(-2, 2);
 		private Range imaginaryRange = new Range(-2, 2);
 		private bool isZooming = false;
@@ -70,6 +69,6 @@ namespace FractalWinForm
 				), 
 				new Size(viewport.Width, viewport.Height)
 			)
-			.RenderAsBitmap((c) => c * c + 1.0 - phi - movingConstant);
+			.RenderAsBitmap((c) => c * c + 1.0 - phi);
 	}
 }

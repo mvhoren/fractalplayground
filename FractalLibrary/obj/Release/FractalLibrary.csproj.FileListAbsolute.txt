@@ -1,4 +1,0 @@
-C:\Development\Fractal\FractalLibrary\bin\Release\FractalLibrary.dll
-C:\Development\Fractal\FractalLibrary\bin\Release\FractalLibrary.pdb
-C:\Development\Fractal\FractalLibrary\obj\Release\FractalLibrary.dll
-C:\Development\Fractal\FractalLibrary\obj\Release\FractalLibrary.pdb
