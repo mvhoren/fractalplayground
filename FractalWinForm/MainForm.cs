@@ -1,4 +1,5 @@
 ﻿using Fractal;
+using Fractal.Library.FSharp;
 using System.Drawing;
 using System.Windows.Forms;
 

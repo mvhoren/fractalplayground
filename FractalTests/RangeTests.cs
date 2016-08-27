@@ -1,4 +1,4 @@
-﻿using Fractal;
+﻿using Fractal.Library.FSharp;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FractalTests

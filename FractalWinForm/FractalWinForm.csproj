@@ -81,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fractal.Library.FSharp\Fractal.Library.FSharp.fsproj">
+      <Project>{f4327e46-c018-4a30-9a7d-f042e2d624bc}</Project>
+      <Name>Fractal.Library.FSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FractalLibrary\FractalLibrary.csproj">
       <Project>{f1f3e0f3-092e-4e09-84f9-5b85692546f0}</Project>
       <Name>FractalLibrary</Name>

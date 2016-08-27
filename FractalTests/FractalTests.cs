@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fractal;
+using Fractal.Library.FSharp;
 using System.Drawing;
 using System.Numerics;
+using Fractal;
 
 namespace FractalTests
 {
