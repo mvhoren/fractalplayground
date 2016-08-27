@@ -18,10 +18,10 @@ namespace FractalTests
 		[TestMethod]
 		public void convert_screen_to_complex() 
 		{
-			Assert.IsTrue(fractalRenderer.ScreenToComplex(new Point(0, 0)) == new Complex(-1, -1));
-			Assert.IsTrue(fractalRenderer.ScreenToComplex(new Point(1024, 0)) == new Complex(1, -1));
-			Assert.IsTrue(fractalRenderer.ScreenToComplex(new Point(1024, 1024)) == new Complex(1, 1));
-			Assert.IsTrue(fractalRenderer.ScreenToComplex(new Point(0, 1024)) == new Complex(-1, 1));
+			Assert.AreEqual(fractalRenderer.ScreenToComplex(new Point(0, 0)), new Complex(-1, -1));
+			Assert.AreEqual(fractalRenderer.ScreenToComplex(new Point(1024, 0)), new Complex(1, -1));
+			Assert.AreEqual(fractalRenderer.ScreenToComplex(new Point(1024, 1024)), new Complex(1, 1));
+			Assert.AreEqual(fractalRenderer.ScreenToComplex(new Point(0, 1024)), new Complex(-1, 1));
 		}
 		
 	}
