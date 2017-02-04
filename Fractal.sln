@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalTests", "FractalTests\FractalTests.csproj", "{FDFC20CE-FFD4-4C6D-B99B-AF77A262AAD1}"
 EndProject
@@ -12,6 +12,9 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fractal.Library.FSharp", "Fractal.Library.FSharp\Fractal.Library.FSharp.fsproj", "{F4327E46-C018-4A30-9A7D-F042E2D624BC}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -1,1 +1,17 @@
 C:\Development\Fractal\FractalWinForm\bin\Release\FractalWinForm.exe.config
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FractalWinForm.exe.config
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FractalWinForm.exe
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FractalWinForm.pdb
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\Fractal.Library.FSharp.dll
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FractalLibrary.dll
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FSharp.Core.dll
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\Fractal.Library.FSharp.pdb
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\Fractal.Library.FSharp.xml
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FractalLibrary.pdb
+C:\Development\FractalPlayground\FractalWinForm\bin\Release\FSharp.Core.xml
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.csprojResolveAssemblyReference.cache
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.FormMain.resources
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.Properties.Resources.resources
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.csproj.GenerateResource.Cache
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.exe
+C:\Development\FractalPlayground\FractalWinForm\obj\Release\FractalWinForm.pdb

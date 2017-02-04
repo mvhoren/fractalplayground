@@ -1,5 +1,6 @@
 ﻿using Fractal;
 using Fractal.Library.FSharp;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +8,6 @@ namespace FractalWinForm
 {
 	public partial class FormMain : Form
 	{
-		private double phi = 1.61803398874989484820458683436;
 		private Range realRange = new Range(-2, 2);
 		private Range imaginaryRange = new Range(-2, 2);
 		private bool isZooming = false;
@@ -63,16 +63,31 @@ namespace FractalWinForm
 			Render();
 		}
 
-		private void Render()  =>
-			viewport.Image = new FractalRenderer
+		private void Render() 
+		{
+			/*
+				timings in release, with numerics.complex = ~140ms per render
+				timings in release, with simplenumeric = 
+			*/
+
+			Stopwatch sw = new Stopwatch();
+			sw.Start();
+
+			/*viewport.Image = */
+			new FractalRenderer
 			(
-				new ComplexPlane
-				(
-					realRange,
-					imaginaryRange
-				), 
+				new ComplexPlane(realRange, imaginaryRange),
 				new Size(viewport.Width, viewport.Height)
 			)
-			.RenderAsBitmap((c) => c * c + 1.0 - phi);
+			.RenderAsBitmap();
+
+			sw.Stop();
+			Text = $"Render took: {sw.Elapsed.TotalMilliseconds:0.00}ms ({1000.0 / sw.Elapsed.TotalMilliseconds:0.00} FPS)";
+		}
+
+		private void button1_Click(object sender, System.EventArgs e)
+		{
+			Render();
+		}
 	}
 }

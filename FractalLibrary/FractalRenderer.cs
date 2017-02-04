@@ -9,52 +9,58 @@ namespace Fractal
 {
 	public class FractalRenderer
 	{
+		private double phi = 1.61803398874989484820458683436;
+
 		public ComplexPlane ComplexPlane { get; }
 		public Size Size { get; }
 		Range horizontal { get; }
 		Range vertical { get; }
 
-		private readonly int iterationCutoff = 1000;
+		private readonly int iterationCutoff = 500;
 		private Color[] palette;
 
 		public FractalRenderer(ComplexPlane complexPlane, Size size)
 		{
 			ComplexPlane = complexPlane;
 			Size = size;
-			horizontal = new Range(0, size.Width);
-			vertical = new Range(0, size.Height);
+			horizontal = new Range(0, Size.Width);
+			vertical = new Range(0, Size.Height);
 			palette = Enumerable.Range(0, 16).Select(i => Color.FromArgb(0, 0, 255 - i * 8)).Union(
 					  Enumerable.Range(0, 16).Select(i => Color.FromArgb(0, 255 - i * 8, 0))).Union(
 					  Enumerable.Range(0, 16).Select(i => Color.FromArgb(255 - i * 8, 0, 0))).ToArray();
 		}
 
-		public Complex ScreenToComplex(Point p) =>
-			new Complex(horizontal.Map(p.X, ComplexPlane.Real), vertical.Map(p.Y, ComplexPlane.Imaginary));
-
-		public Bitmap RenderAsBitmap(Func<Complex, Complex> function)
+		public void RenderAsBitmap()
 		{
 			Bitmap bitmap = new Bitmap(Size.Width, Size.Height);
 
 			Func<int, int, int> getIterations = (x, y) =>
 			{
-				var complex = ScreenToComplex(new Point(x, y));
-				var numIterations = 0;
+				var r = horizontal.Map(x, ComplexPlane.Real);
+				var i = vertical.Map(y, ComplexPlane.Imaginary);
 
-				while (numIterations < iterationCutoff && complex.Imaginary < 2.0 && complex.Real < 2.0)
+				var numIterations = 0;
+				
+				while (numIterations < iterationCutoff && i < 2.0 && r < 2.0)
 				{
-					complex = function(complex);
+					var rnew =  r * r + i * i * -1 + 1 - phi;
+					var ri = r * i;
+					var inew = ri + ri;
+
+					r = rnew;
+					i = inew;
+
 					numIterations++;
 				}
 
 				return numIterations;
 			};
 
-			var processedPixels = (
-				from x in Enumerable.Range(0, bitmap.Width)
-				from y in Enumerable.Range(0, bitmap.Height)
+			var pixels = (
+				from x in Enumerable.Range(0, Size.Width)
+				from y in Enumerable.Range(0, Size.Height)
 				select new { x, y })
 			.AsParallel()
-			.WithDegreeOfParallelism(Environment.ProcessorCount)
 			.Select(p => new 
 			{
 				x = p.x,
@@ -63,28 +69,36 @@ namespace Fractal
 			})
 			.ToArray();
 
-			//var paletteScale = palette.Length / (double)processedPixels.Where(p => p.i != iterationCutoff).Max(p => p.i);
-
-			
 			BitmapData data = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-			int stride = data.Stride;
+			int stride = ;
 			
 			unsafe
 			{
 				byte* bitmapPointer = (byte*)data.Scan0;
 
-				foreach (var p in processedPixels)
-				{
-					Color c = p.i == iterationCutoff ? Color.Black : palette[p.i % palette.Length];
+				var i = 1;
 
-					bitmapPointer[(p.x * 3) + p.y * stride] = c.B;
-					bitmapPointer[(p.x * 3) + p.y * stride + 1] = c.G;
-					bitmapPointer[(p.x * 3) + p.y * stride + 2] = c.R;
+				for (var x = 0; x < bitmap.Width; x++)
+				{
+					var offset = x * 3;
+
+					for (var y = 0; y < bitmap.Height; y++)
+					{
+						var stride = y * data.Stride;
+
+						//Color c = i == iterationCutoff ? Color.Black : palette[i % palette.Length];
+
+						bitmapPointer[offset + stride] = 255;// c.B;
+						bitmapPointer[offset + stride + 1] = 255;// c.G;
+						bitmapPointer[offset + stride + 2] = 255; // c.R;
+					}
 				}
 			}
 
 			bitmap.UnlockBits(data);
-			return bitmap;
+			*/
+
+			//return bitmap;
 		}
 	}
 }

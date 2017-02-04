@@ -56,6 +56,7 @@
     <Compile Include="FractalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RangeTests.cs" />
+    <Compile Include="SimpleComplexTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fractal.Library.FSharp\Fractal.Library.FSharp.fsproj">
